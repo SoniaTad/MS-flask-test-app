@@ -10,15 +10,16 @@ pool:
 
   vmImage: ubuntu-latest
 variables: 
-    imageName: 'flask-test'
+    imageName: 'acruktest01.azurecr.io/flask_test'
 
 
 steps:
 - task: Docker@2
-  displayName: 'Building a docker image'
+  displayName: 'Building a docker image and pushing it to ACR'
   inputs:
-    command: 'build'
+    containerRegistry: 'acrukstest01'
+    repository: '$(imageName)'
+    command: 'buildAndPush'
     Dockerfile: '**/Dockerfile'
-    repository: $(imageName)
 
 
