@@ -1,4 +1,5 @@
 # Pull a pre-built alpine docker image with nginx and python3 installed
+# adding comments for testing ....
 FROM tiangolo/uwsgi-nginx:python3.8-alpine-2020-12-19
 
 # Set the port on which the app runs; make both values the same.
